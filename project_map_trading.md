@@ -36,15 +36,14 @@ This file serves as the central hub for the trading bot project, providing a com
   - **Removed**:
     - `manual_trade.py`, `async_balance_fetcher.py`, `websocket_manager.py`, `notification_manager.py`, `rate_limiter.py`, `error_handler.py`, `performance_metrics.py`, `user_manager.py`, `trade_history.py`, `market_data_fetcher.py`, `exchange_connection_settings.py`.
 
-- **Additional Modules** (78 modules, 52 checked, 26 unchecked):
+- **Additional Modules** (78 modules, 55 checked, 23 unchecked):
   - **Checked**:
-    - **Kept** (36 modules):
+    - **Kept** (35 modules):
       - `cache_utils.py`: Caching utilities (updated 2025-03-29: added default TTL and error handling).
       - `check_all_trades.py`: Checks all trades (updated 2025-03-29: added exchange validation and improved logging).
       - `check_trades.py`: Checks individual trades (updated 2025-03-29: added exchange validation and improved logging).
-      - `config_notifications.py`: Notification settings (updated to use environment variables).
-      - `data_utils.py`: Data utilities.
-      - `deposit_manager.py`: Manages deposits.
+      - `data_utils.py`: Data utilities (updated 2025-03-29: added input validation and improved logging).
+      - `deposit_manager.py`: Manages deposits (updated 2025-03-29: added exchange validation and improved logging).
       - `exchange_factory.py`: Exchange factory for creating exchange instances.
       - `exchange_setup.py`: Exchange setup utilities.
       - `exchange_utils.py`: Exchange utilities.
@@ -98,9 +97,9 @@ This file serves as the central hub for the trading bot project, providing a com
       - `user_trade_cache.py`: User trade cache.
       - `worker.py`: Worker for background tasks.
       - `utils.py`: General utilities.
-    - **Removed** (20 modules):
-      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`.
-  - **Unchecked**: 26 modules (to be audited).
+    - **Removed** (21 modules):
+      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`, `config_notifications.py`.
+  - **Unchecked**: 23 modules (to be audited).
   - **Note**: The following additional modules were accidentally included in the repository and should be removed:
     - `async_ohlcv_fetcher.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `state.py`.
 
@@ -112,6 +111,7 @@ This file serves as the central hub for the trading bot project, providing a com
   - 2025-03-29: Removed dependency `bot_commands_core -> async_exchange_fetcher` (module removed).
   - 2025-03-29: Removed module `bot_commands_core.py` and its dependencies.
   - 2025-03-29: Removed module `bot_translations.py` and its dependencies.
+  - 2025-03-29: Removed module `config_notifications.py` (no dependencies in graph).
 
 ## Roadmap
 - **Short-term**:
