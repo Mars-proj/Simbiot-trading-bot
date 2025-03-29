@@ -161,7 +161,7 @@ To ensure consistency and avoid errors during code modifications, the following 
    - Save the file (Ctrl+O, Enter, Ctrl+X).
 
 4. **Add the updated file to Git index**:
-   - Command: `git add <module_name>.py`
+   - Command: `git add <file> ...`
    - Example: `git add bot_commands_core.py`
 
 5. **Create a commit**:
