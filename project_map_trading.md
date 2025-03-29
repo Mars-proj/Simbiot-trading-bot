@@ -5,10 +5,10 @@ This file serves as the central hub for the trading bot project, providing a com
 
 ## System Architecture
 - **Core Trading Logic** (16 modules):
-  - `trade_executor_core.py`: Executes trades based on signals.
+  - `trade_executor_core.py`: Executes trades based on signals (updated 2025-03-29: added user validation and improved logging).
   - `trade_executor_signals.py`: Processes trading signals.
-  - `bot_trading.py`: Main trading bot logic.
-  - `start_trading_all.py`: Initiates trading for all symbols.
+  - `bot_trading.py`: Main trading bot logic (updated 2025-03-29: improved logging).
+  - `start_trading_all.py`: Initiates trading for all symbols (updated 2025-03-29: improved logging).
   - `signal_generator_core.py`: Core signal generation logic.
   - `signal_generator_indicators.py`: Generates signals using indicators.
   - `strategies.py`: Defines trading strategies.
@@ -110,6 +110,7 @@ This file serves as the central hub for the trading bot project, providing a com
   - 2025-03-29: Removed module `config_notifications.py` (no dependencies in graph).
   - 2025-03-29: Removed module `ml_data_preprocessor.py` (no dependencies in graph).
   - 2025-03-29: Removed module `notification_utils.py` (no dependencies in graph).
+  - 2025-03-29: Removed module `trade_blacklist.py` (no dependencies in graph).
 
 ## Roadmap
 - **Short-term**:
@@ -121,6 +122,14 @@ This file serves as the central hub for the trading bot project, providing a com
   - Fix `retraining_manager.py` issue.
   - Add API rate limit monitoring for MEXC.
   - Load testing with 100 users.
+  - Optimize `trade_executor_core.py`: Add input validation, risk management, and support for market orders.
+  - Optimize `bot_trading.py`: Integrate real signal generation and risk management.
+  - Optimize `start_trading_all.py`: Add input validation, risk management, and better error handling.
+  - Optimize `check_all_trades.py` and `check_trades.py`: Add API key validation and detailed logging.
+  - Optimize `deposit_manager.py`: Add API key validation and symbol validation.
+  - Optimize `exchange_factory.py` and `exchange_setup.py`: Add support for additional configuration parameters.
+  - Optimize `exchange_utils.py`: Add input validation for exchange object.
+  - Optimize `order_utils.py`: Add support for market orders.
 - **Medium-term**:
   - Scale to 1000+ users.
   - Implement self-learning and self-improving mechanisms.
