@@ -1,0 +1,22 @@
+# Логи
+logs/
+*.log
+*.log.*
+nohup.out
+
+# Виртуальное окружение
+venv/
+
+# Временные файлы
+*.json
+*.h5
+*.save
+*.txt
+*.md.save
+*.py.save
+__pycache__/
+
+# Дополнительные исключения
+.env
+.env.save
+.env.save.1
