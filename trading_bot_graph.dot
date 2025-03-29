@@ -1,101 +1,58 @@
 digraph trading_bot {
-    rankdir=BT;
-
-    // Core Trading Logic Modules
-    trade_executor_core [label="trade_executor_core.py"];
-    trade_executor_signals [label="trade_executor_signals.py"];
-    bot_trading [label="bot_trading.py"];
-    start_trading_all [label="start_trading_all.py"];
-    signal_generator_core [label="signal_generator_core.py"];
-    signal_generator_indicators [label="signal_generator_indicators.py"];
-    strategies [label="strategies.py"];
-    trade_pool_core [label="trade_pool_core.py"];
-    trade_pool_queries [label="trade_pool_queries.py"];
-    global_objects [label="global_objects.py"];
-    symbol_filter [label="symbol_filter.py"];
-    balance_manager [label="balance_manager.py"];
-    deposit_calculator [label="deposit_calculator.py"];
-    signal_blacklist [label="signal_blacklist.py"];
-    retraining_manager [label="retraining_manager.py"];
-    local_model_api [label="local_model_api.py"];
-
-    // Supporting Modules
-    logging_setup [label="logging_setup.py"];
-    config_keys [label="config_keys.py"];
-    redis_initializer [label="redis_initializer.py"];
-    redis_client [label="redis_client.py"];
-    json_handler [label="json_handler.py"];
-    config_settings [label="config_settings.py"];
-    backtest_cycle [label="backtest_cycle.py"];
-    exchange_connection_settings [label="exchange_connection_settings.py"];
-    bot_user_data [label="bot_user_data.py"];
-    api_server [label="api_server.py"];
-
-    // Additional Modules (abbreviated for brevity)
-    // ... (other 78 modules)
-
-    // Dependencies
+    // Core Trading Logic
+    trade_executor_core -> logging_setup;
+    trade_executor_core -> json_handler;
+    trade_executor_core -> trade_executor_signals;
+    trade_executor_core -> bot_trading;
+    trade_executor_core -> global_objects;
+    trade_executor_core -> symbol_filter;
     trade_executor_core -> balance_manager;
     trade_executor_core -> deposit_calculator;
     trade_executor_core -> signal_blacklist;
-    trade_executor_core -> logging_setup;
-    trade_executor_core -> json_handler;
-    trade_executor_core -> global_objects;
-
     trade_executor_signals -> logging_setup;
     trade_executor_signals -> signal_generator_core;
     trade_executor_signals -> signal_generator_indicators;
-    trade_executor_signals -> global_objects;
-    trade_executor_signals -> config_settings;
-    trade_executor_signals -> redis_initializer;
-    trade_executor_signals -> bot_user_data;
-    trade_executor_signals -> redis_client;
-
-    bot_trading -> trade_executor_core;
-    bot_trading -> trade_executor_signals;
+    trade_executor_signals -> strategies;
     bot_trading -> logging_setup;
-    bot_trading -> signal_generator_core;
-    bot_trading -> strategies;
-    bot_trading -> trade_pool_queries;
+    bot_trading -> trade_executor_core;
+    bot_trading -> trade_pool_core;
     bot_trading -> global_objects;
-    bot_trading -> symbol_filter;
-    bot_trading -> config_keys;
-    bot_trading -> bot_user_data;
-    bot_trading -> redis_client;
-    bot_trading -> retraining_manager;
-    bot_trading -> backtest_cycle;
-
+    start_trading_all -> logging_setup;
     start_trading_all -> bot_trading;
     start_trading_all -> config_keys;
-    start_trading_all -> logging_setup;
-    start_trading_all -> redis_initializer;
-    start_trading_all -> redis_client;
-
+    start_trading_all -> bot_user_data;
     signal_generator_core -> logging_setup;
+    signal_generator_core -> global_objects;
     signal_generator_indicators -> logging_setup;
+    signal_generator_indicators -> global_objects;
     strategies -> logging_setup;
     trade_pool_core -> logging_setup;
+    trade_pool_core -> trade_pool_queries;
     trade_pool_queries -> logging_setup;
+    trade_pool_queries -> redis_client;
     global_objects -> logging_setup;
     symbol_filter -> logging_setup;
-    symbol_filter -> redis_client;
+    symbol_filter -> global_objects;
     balance_manager -> logging_setup;
+    balance_manager -> global_objects;
     deposit_calculator -> logging_setup;
-    deposit_calculator -> redis_initializer;
-    deposit_calculator -> redis_client;
+    deposit_calculator -> global_objects;
     signal_blacklist -> logging_setup;
+    signal_blacklist -> global_objects;
     retraining_manager -> logging_setup;
+    retraining_manager -> global_objects;
     local_model_api -> logging_setup;
+    local_model_api -> global_objects;
 
-    // Supporting Modules Dependencies
+    // Supporting Modules
+    logging_setup -> global_objects;
+    config_keys -> logging_setup;
     redis_initializer -> logging_setup;
-    redis_client -> redis_initializer;
     redis_client -> logging_setup;
-    json_handler -> logging_setup;
+    json_handler -> global_objects;
     config_settings -> logging_setup;
     backtest_cycle -> logging_setup;
-    exchange_connection_settings -> logging_setup;
+    backtest_cycle -> bot_trading;
     bot_user_data -> logging_setup;
     api_server -> logging_setup;
-    config_keys -> logging_setup;
 }
