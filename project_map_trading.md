@@ -36,10 +36,9 @@ This file serves as the central hub for the trading bot project, providing a com
   - **Removed**:
     - `manual_trade.py`, `async_balance_fetcher.py`, `websocket_manager.py`, `notification_manager.py`, `rate_limiter.py`, `error_handler.py`, `performance_metrics.py`, `user_manager.py`, `trade_history.py`, `market_data_fetcher.py`, `exchange_connection_settings.py`.
 
-- **Additional Modules** (78 modules, 48 checked, 30 unchecked):
+- **Additional Modules** (78 modules, 49 checked, 29 unchecked):
   - **Checked**:
-    - **Kept** (37 modules):
-      - `bot_translations.py`: Translation support for Telegram bot.
+    - **Kept** (36 modules):
       - `cache_utils.py`: Caching utilities.
       - `check_all_trades.py`: Checks all trades.
       - `check_trades.py`: Checks individual trades.
@@ -99,9 +98,9 @@ This file serves as the central hub for the trading bot project, providing a com
       - `user_trade_cache.py`: User trade cache.
       - `worker.py`: Worker for background tasks.
       - `utils.py`: General utilities.
-    - **Removed** (19 modules):
-      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`.
-  - **Unchecked**: 30 modules (to be audited).
+    - **Removed** (20 modules):
+      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`.
+  - **Unchecked**: 29 modules (to be audited).
   - **Note**: The following additional modules were accidentally included in the repository and should be removed:
     - `async_ohlcv_fetcher.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `state.py`.
 
@@ -112,6 +111,7 @@ This file serves as the central hub for the trading bot project, providing a com
   - 2025-03-28: Added dependency `config_keys -> logging_setup`.
   - 2025-03-29: Removed dependency `bot_commands_core -> async_exchange_fetcher` (module removed).
   - 2025-03-29: Removed module `bot_commands_core.py` and its dependencies.
+  - 2025-03-29: Removed module `bot_translations.py` and its dependencies.
 
 ## Roadmap
 - **Short-term**:
@@ -175,5 +175,4 @@ To ensure consistency and avoid errors during code modifications, the following 
    - This updates the repository directly from the server.
 
 ## Security Notes
-- **2025-03-29**: Telegram bot token was compromised in `config_notifications.py` in the repository history. The token has been removed from the code and replaced with `os.getenv("TELEGRAM_BOT_TOKEN", "")`. A new token must be generated via BotFather and added to `.env`:y
-
+- **2025-03-29**: Telegram bot token was compromised in `config_notifications.py` in the repository history. The token has been removed from the code and replaced with `os.getenv("TELEGRAM_BOT_TOKEN", "")`. A new token must be generated via BotFather and added to `.env`:
