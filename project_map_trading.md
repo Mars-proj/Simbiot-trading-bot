@@ -51,7 +51,7 @@ This file serves as the central hub for the trading bot project, providing a com
       - `features.py`: Feature engineering for ML models (updated 2025-03-29: added input validation, fixed RSI calculation, improved logging).
       - `indicators.py`: Technical indicators (updated 2025-03-29: added input validation and improved logging).
       - `limits.py`: Trading limits (updated 2025-03-29: added input validation and improved logging).
-      - `market_rentgen_core.py`: Core market analysis logic (updated 2025-03-29: replaced price data stub with OHLCV fetch, added validation, improved logging).
+      - `market_rentgen_core.py`: Core market analysis logic (updated 2025-03-29: replaced dummy data with real OHLCV data, added input validation, improved logging).
       - `market_trend_checker.py`: Checks market trends (updated 2025-03-29: added input validation and improved logging).
       - `ml_data_preparer.py`: Prepares data for ML models (updated 2025-03-29: added input validation and improved logging).
       - `ml_data_preparer_utils.py`: Utilities for ML data preparation.
