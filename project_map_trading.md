@@ -95,8 +95,8 @@ This file serves as the central hub for the trading bot project, providing a com
       - `user_trade_cache.py`: User trade cache.
       - `worker.py`: Worker for background tasks.
       - `utils.py`: General utilities.
-    - **Removed** (23 modules):
-      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`, `config_notifications.py`, `ml_data_preprocessor.py`, `notification_utils.py`.
+    - **Removed** (28 modules):
+      - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`, `config_notifications.py`, `ml_data_preprocessor.py`, `notification_utils.py`, `async_ohlcv_fetcher.py`, `strategies_momentum.py`, `strategies_trend.py`, `strategies_volatility.py`, `state.py`.
   - **Unchecked**: 0 modules (all modules audited).
 
 ## Dependencies Graph
