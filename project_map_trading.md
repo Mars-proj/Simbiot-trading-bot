@@ -36,7 +36,7 @@ This file serves as the central hub for the trading bot project, providing a com
   - **Removed**:
     - `manual_trade.py`, `async_balance_fetcher.py`, `websocket_manager.py`, `notification_manager.py`, `rate_limiter.py`, `error_handler.py`, `performance_metrics.py`, `user_manager.py`, `trade_history.py`, `market_data_fetcher.py`, `exchange_connection_settings.py`.
 
-- **Additional Modules** (78 modules, 60 checked, 18 unchecked):
+- **Additional Modules** (78 modules, 65 checked, 13 unchecked):
   - **Checked**:
     - **Kept** (35 modules):
       - `cache_utils.py`: Caching utilities (updated 2025-03-29: added default TTL and error handling).
@@ -49,11 +49,11 @@ This file serves as the central hub for the trading bot project, providing a com
       - `exchange_utils.py`: Exchange utilities (updated 2025-03-29: added symbol validation and improved logging).
       - `exit_points_calculator.py`: Calculates exit points for trades (updated 2025-03-29: added input validation and improved logging).
       - `features.py`: Feature engineering for ML models (updated 2025-03-29: added input validation, fixed RSI calculation, improved logging).
-      - `indicators.py`: Technical indicators.
-      - `limits.py`: Trading limits.
-      - `market_rentgen_core.py`: Core market analysis logic.
-      - `market_trend_checker.py`: Checks market trends.
-      - `ml_data_preparer.py`: Prepares data for ML models.
+      - `indicators.py`: Technical indicators (updated 2025-03-29: added input validation and improved logging).
+      - `limits.py`: Trading limits (updated 2025-03-29: added input validation and improved logging).
+      - `market_rentgen_core.py`: Core market analysis logic (updated 2025-03-29: replaced price data stub with OHLCV fetch, added validation, improved logging).
+      - `market_trend_checker.py`: Checks market trends (updated 2025-03-29: added input validation and improved logging).
+      - `ml_data_preparer.py`: Prepares data for ML models (updated 2025-03-29: added input validation and improved logging).
       - `ml_data_preparer_utils.py`: Utilities for ML data preparation.
       - `ml_data_preprocessor.py`: Preprocesses ML data.
       - `ml_feature_engineer.py`: Feature engineering for ML.
@@ -99,7 +99,7 @@ This file serves as the central hub for the trading bot project, providing a com
       - `utils.py`: General utilities.
     - **Removed** (21 modules):
       - `trade_blacklist.py`, `async_exchange_fetcher.py`, `market_analyzer.py`, `data_fetcher.py`, `symbol_utils.py`, `signal_aggregator.py`, `strategies_volume.py`, `holdings_manager.py`, `analytics.py`, `async_exchange_manager.py`, `async_order_fetcher.py`, `async_ticker_fetcher.py`, `async_utils.py`, `backtest_analyzer.py`, `backtester.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `bot_commands_core.py`, `bot_translations.py`, `config_notifications.py`.
-  - **Unchecked**: 18 modules (to be audited).
+  - **Unchecked**: 13 modules (to be audited).
   - **Note**: The following additional modules were accidentally included in the repository and should be removed:
     - `async_ohlcv_fetcher.py`, `balance_utils.py`, `bot_commands_balance.py`, `bot_commands_status.py`, `state.py`.
 
